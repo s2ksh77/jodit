@@ -71,10 +71,10 @@ export function indent(editor: IJodit): void {
 
 			let currentBox = current
 				? (Dom.up(
-						current,
-						node => Dom.isBlock(node, editor.ew),
-						editor.editor
-				  ) as HTMLElement)
+					current,
+					node => Dom.isBlock(node, editor.ew),
+					editor.editor
+				) as HTMLElement)
 				: false;
 
 			const enter = editor.o.enter;
@@ -121,11 +121,11 @@ export function indent(editor: IJodit): void {
 
 	editor.registerCommand('indent', {
 		exec: callback,
-		hotkeys: ['ctrl+]', 'cmd+]']
+		hotkeys: ['tab', 'tab']
 	});
 
 	editor.registerCommand('outdent', {
 		exec: callback,
-		hotkeys: ['ctrl+[', 'cmd+[']
+		hotkeys: ['shift+tab', 'shift+tab']
 	});
 }
